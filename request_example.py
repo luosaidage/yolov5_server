@@ -1,15 +1,18 @@
+import re
 import requests
 
-headers = {
-    'accept': 'application/json',
-    # requests won't add a boundary if this header is set when you pass files=
-    # 'Content-Type': 'multipart/form-data',
-}
+def pick_img(path='/Users/sai/Pictures/INT01P07051119.jpg'):
+    headers = {
+        'accept': 'application/json',
+        # requests won't add a boundary if this header is set when you pass files=
+        # 'Content-Type': 'multipart/form-data',
+    }
 
-files = {
-    'file': open('二维码3.jpg;type=image/jpeg', 'rb'),
-}
+    files = {
+        'file': open(path, 'rb'),
+    }
 
-response = requests.post('https://luosaidage-ultralytics-yolov5-64qpqxrph9vg-8000.githubpreview.dev/uploadfile/', headers=headers, files=files)
+    response = requests.post('http://47.99.45.195:8000/uploadfile/', headers=headers, files=files, timeout=5)
 
-print (response)
+    print (response.text)
+    return response.text
