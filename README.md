@@ -3,15 +3,15 @@
 <details open>
 <summary>Install</summary>
 
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a
+Clone repo and install requirements.txt in a
 [**Python>=3.7.0**](https://www.python.org/) environment, including
-[**PyTorch>=1.7**](https://pytorch.org/get-started/locally/).
+[**PyTorch>=1.7**](https://pytorch.org/get-started/locally/)
 
 ```bash
-git clone https://github.com/luosaidage/yolov5_server.git  # clone. 
-pip install fastapi. 
-pip install uvicorn[standard]. 
-pip install python-multipart.   # install
+git clone https://github.com/luosaidage/yolov5_server.git  # clone
+pip install fastapi
+pip install uvicorn[standard]
+pip install python-multipart   # install
 ```
 
 </details>
@@ -21,11 +21,19 @@ pip install python-multipart.   # install
 
 ```bash
 uvicorn main:app --reload --host 0.0.0.0
+# visit 127.0.0.1:8000/docs(try it out)
 ```
 
 </details>
 
-## option. 
+## Chaneg weights file
+```bash
+vi ./det_api.py
+# find def(run)
+# change weight default path in this def.
+```
+
+## option(change pip origin)
 ```bash
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
