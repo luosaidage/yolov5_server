@@ -1,0 +1,17 @@
+<!-- templates/users/add.html -->
+<!doctype html>
+<html>
+<head>
+    <title>Add</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Add!</h1>
+
+    <form method="post" enctype="multipart/form-data" action="{% url 'users:add' %}">
+        {% csrf_token %}
+        {{ af.as_p }}
+        <input type="submit" value="OK"/>
+    </form>
+</body>
+</html>
